@@ -44,10 +44,10 @@ class Calculator
 		{
 			obj.Mul(x, y);
 		}
-    else if(choice == 4)
-    {
-      obj.Div(x, y);
-    }
+        else if(choice == 4)
+        {
+            obj.Div(x, y);
+        }
 		else
 		{
 			System.out.println("Wrong choice");
