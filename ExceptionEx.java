@@ -20,7 +20,7 @@ class ExceptionEx
   }
   catch(InputMismatchException me)
   {
-   System.out.println("Wrong input"); 
+   System.out.println("Enter Integer only"); 
   }
   catch(Exception e) //For any other unexcepted Exception
   {
