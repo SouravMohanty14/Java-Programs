@@ -3,6 +3,7 @@ public class Employee implements Serializable
 {
 	private String empID, empName;
 	int salary;
+	private static final long serialVersionUID = 1L;
 	public String getEmpID() {
 		return empID;
 	}
@@ -21,13 +22,16 @@ public class Employee implements Serializable
 	public void setSalary(int salary) {
 		this.salary = salary;
 	}
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
 	@Override
 	public String toString() {
 		return "Employee [empID=" + empID + ", empName=" + empName + ", salary=" + salary + "]";
 	}
 	
-
 }
+
 public class EmployeeReadDemo
 {
 	public static void main(String args[])
