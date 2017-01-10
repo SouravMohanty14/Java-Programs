@@ -1,4 +1,6 @@
 import java.io.*;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,6 +17,20 @@ public class LoginCheck extends HttpServlet
 		//was sent by jsp page
 		String uname =  request.getParameter("uname");
 		String passwd = request.getParameter("passwd");
+		model.LoginCredential obj = new model.LoginCredential();
+		obj.setUname(uname);
+		obj.setPasswd(passwd);
+		if(obj.checkLogin())
+		{
+			RequestDispatcher dispatch = request.getRequestDispatcher("Successfully logged in");
+			dispatch.forward(request,response);
+			
+		}
+		else
+		{
+			RequestDispatcher dispatch = request.getRequestDispatcher("Failed to log in");
+			dispatch.forward(request,response);
+		}
 	}
 
 }
